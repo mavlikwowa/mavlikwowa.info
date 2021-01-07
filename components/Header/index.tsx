@@ -1,5 +1,5 @@
 /* Libraries */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 /* Styled Components */
 import { Tag } from 'mavlikwowa.ui';
 import { StyledHeader, StyledSkills } from './style';
@@ -8,6 +8,23 @@ import { StyledHeader, StyledSkills } from './style';
 import { SKILLS } from '../../data/texts';
 
 const Header: React.FC = () => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let counter = count;
+    const interval = setInterval(() => {
+      if (counter >= SKILLS.length) {
+        clearInterval(interval);
+      } else {
+        /* eslint-disable */
+        setCount((count) => count + 1);
+        counter++; // local variable that this closure will see
+        /* eslint-enable */
+      }
+    }, 500);
+    return () => clearInterval(interval);
+  }, [SKILLS]);
+
   return (
     <StyledHeader>
       <h1>Владимир Маликов</h1>
@@ -15,7 +32,7 @@ const Header: React.FC = () => {
       <div>
         <img alt="avatar" src="/img/avatar.png" />
         <StyledSkills>
-          {SKILLS.map((item: string) => {
+          {SKILLS.slice(0, count).map((item: string) => {
             // Doesn't have similar items
             return (
               <Tag
