@@ -52,7 +52,13 @@ export const StyledSkills = styled.div`
     align-items: center;
     max-width: 30%;
     div {
-      margin: 0px 5px 5px 0; 
+      margin: 0px 5px 5px 0;
+      animation-duration: 5s;
+      animation-name: showing;
+      @keyframes showing {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+      }
     }
     @media (max-width: 940px) {
       max-width: 100%;
