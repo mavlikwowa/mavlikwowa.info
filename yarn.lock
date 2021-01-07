@@ -5387,10 +5387,10 @@ markdown-it@^10.0.0:
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
 
-mavlikwowa.ui@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.npmjs.org/mavlikwowa.ui/-/mavlikwowa.ui-0.1.3.tgz#b5b26dc0b82a7025819325260daed68f432449ef"
-  integrity sha512-3aFLURf77/Kyki1wI/KvZ++fflAqZpzfC544k5wa2HVf/KUAVTXgi7FJg2Ihre/mt/CPkH3BbkePM7hghp7q3A==
+mavlikwowa.ui@0.1.5:
+  version "0.1.5"
+  resolved "https://registry.npmjs.org/mavlikwowa.ui/-/mavlikwowa.ui-0.1.5.tgz#97370f1ee496153c87d97a03e65106b609631f16"
+  integrity sha512-MRGoZ+jrNMnYgrLmv7Cg3duMtIFiS39iK/14zm5R1UEUX7k0aDBD5dbSWhCM0MY+7fOLSA4FJuV22y85KXCvcw==
   dependencies:
     "@emotion/react" "^11.1.4"
     "@emotion/styled" "^11.0.0"
@@ -5640,6 +5640,11 @@ neo-async@^2.5.0, neo-async@^2.6.1, neo-async@^2.6.2:
   version "2.6.2"
   resolved "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
+
+next-seo@^4.17.0:
+  version "4.17.0"
+  resolved "https://registry.npmjs.org/next-seo/-/next-seo-4.17.0.tgz#fb3dbe0ed7414aa9d83872ef5d8510980a6dae7e"
+  integrity sha512-/hnb3oq7bhi8s7bup7+Lm6VzzgRucj+JrWtp+dJiYs/04H0N/NhmE9MpepixQ16fFj6G/39JLYxhzsO/QZG/Kw==
 
 next-tick@~1.0.0:
   version "1.0.0"
