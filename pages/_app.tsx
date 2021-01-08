@@ -5,12 +5,17 @@ import * as React from 'react';
 import GlobalStyles from '../components/GlobalStyles';
 import SEO from '../components/SEO';
 
+/* Contexts */
+import LanguageProvider from '../components/Providers/LanguageProvider';
+
 export const App = ({ Component, pageProps }) => {
   return (
     <>
       <GlobalStyles />
       <SEO />
-      <Component {...pageProps} />
+      <LanguageProvider>
+        <Component {...pageProps} />
+      </LanguageProvider>
     </>
   );
 };

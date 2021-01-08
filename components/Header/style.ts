@@ -11,7 +11,7 @@ export const StyledHeader = styled.div`
     flex-direction: column;
     // background-image: url('/img/avatar.png');
     // background-size: cover;
-    min-height: 960px;
+    // min-height: 960px;
     // color: white;
     h1 {
       margin-bottom: 0;
@@ -53,8 +53,10 @@ export const StyledSkills = styled.div`
     max-width: 30%;
     div {
       margin: 0px 5px 5px 0;
-      animation-duration: 5s;
+      opacity: 0;
+      animation-duration: 2s;
       animation-name: showing;
+      animation-fill-mode: forwards;
       @keyframes showing {
         0% {opacity: 0;}
         100% {opacity: 1;}

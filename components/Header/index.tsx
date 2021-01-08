@@ -1,38 +1,24 @@
 /* Libraries */
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 /* Styled Components */
 import { Tag } from 'mavlikwowa.ui';
 import { StyledHeader, StyledSkills } from './style';
 /* Components */
+/* Contexts */
+import { LanguageContext } from '../Providers/LanguageProvider';
 /* Data */
-import { SKILLS } from '../../data/texts';
+import { SKILLS, FAMILYNAME } from '../../data/texts';
 
 const Header: React.FC = () => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    let counter = count;
-    const interval = setInterval(() => {
-      if (counter >= SKILLS.length) {
-        clearInterval(interval);
-      } else {
-        /* eslint-disable */
-        setCount((count) => count + 1);
-        counter++; // local variable that this closure will see
-        /* eslint-enable */
-      }
-    }, 500);
-    return () => clearInterval(interval);
-  }, [SKILLS]);
-
+  const { isEnglish } = useContext(LanguageContext);
   return (
     <StyledHeader>
-      <h1>Владимир Маликов</h1>
+      <h1>{isEnglish ? FAMILYNAME.en : FAMILYNAME.ru}</h1>
       <h3>Frontend Developer</h3>
       <div>
         <img alt="avatar" src="/img/avatar.png" />
         <StyledSkills>
-          {SKILLS.slice(0, count).map((item: string) => {
+          {SKILLS.map((item: string, index: number) => {
             // Doesn't have similar items
             return (
               <Tag
@@ -42,6 +28,7 @@ const Header: React.FC = () => {
                 color="#D0FFC9"
                 width="110px"
                 height="35px"
+                style={{ animationDelay: `${index / 4}S` }}
               >
                 {item}
               </Tag>
