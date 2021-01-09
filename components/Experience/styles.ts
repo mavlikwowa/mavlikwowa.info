@@ -9,6 +9,10 @@ export const StyledExperience = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    
+    h1 {
+      margin-bottom: 0;
+    }
   `;
   }}
 `;
@@ -33,6 +37,7 @@ export const StyledCompanyName = styled.div`
     
     img {
       margin: 5px;
+      padding: 0 10px 0 10px;
       border: 1px solid black;
     }
     

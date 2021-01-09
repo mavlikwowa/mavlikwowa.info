@@ -4,6 +4,7 @@ import differenceInYears from 'date-fns/differenceInYears';
 import addYears from 'date-fns/addYears';
 import differenceInMonths from 'date-fns/differenceInMonths';
 import format from 'date-fns/format';
+import { ru, enUS } from 'date-fns/locale';
 import isAfter from 'date-fns/isAfter';
 /* Styled Components */
 import {
@@ -14,61 +15,103 @@ import {
 /* Contexts */
 import { LanguageContext } from '../Providers/LanguageProvider';
 /* Interfaces */
-import { EmployeePositionProps } from '../../data/interfaces';
+import { EmployeePositionProps, CompanyProps } from '../../data/interfaces';
 /* Data */
 import { EXP } from '../../data/texts';
+/* Utils */
+import { capitalizeFirstLetter } from '../../utils/utils';
 
 const Experience: React.FC = () => {
   const { isEnglish } = useContext(LanguageContext);
-  // June 2012
-  const startCareerDt = new Date(2012, 7, 1);
-  const currentDate = new Date();
-  // Amount of years
-  const currentExpYears = differenceInYears(currentDate, startCareerDt);
-  // Amount of month
-  const currentExpMonth = differenceInMonths(
-    currentDate,
-    addYears(startCareerDt, currentExpYears)
-  );
+  // Finds start of my career (June 2012)
+  const startCareerDt = Object.values(EXP)
+    .filter((item: CompanyProps) => item.position)
+    .map(
+      (company: CompanyProps) =>
+        company.position
+          .map((position: EmployeePositionProps) => position.dateStart)
+          .sort()[0]
+    )
+    .sort()[0];
   // sorts a position array
   const sortPositions = (
     prev: EmployeePositionProps,
     next: EmployeePositionProps
-  ) => {
-    if (isAfter(prev.dateStart, next.dateStart)) return 1;
-    if (!isAfter(prev.dateStart, next.dateStart)) return -1;
+  ): number => {
+    if (isAfter(prev.dateStart, next.dateStart)) return -1;
+    if (!isAfter(prev.dateStart, next.dateStart)) return 1;
     return 0;
   };
+  // returns periods of work (string)
+  const getPeriodPosition = (dateStart: Date, dateEnd?: Date): string => {
+    return `${capitalizeFirstLetter(
+      format(dateStart, 'LLLL yyyy', { locale: isEnglish ? enUS : ru })
+    )} - ${
+      dateEnd
+        ? capitalizeFirstLetter(
+            format(dateEnd, 'LLLL yyyy', { locale: isEnglish ? enUS : ru })
+          )
+        : `${isEnglish ? 'cur.time' : 'наст. время'}`
+    }`;
+  };
+  // returns duration of position (amount of years and months)
+  const getDuration = (dateStart: Date, dateEnd?: Date): string => {
+    const currentDate = new Date();
+    const endDate = dateEnd || currentDate;
+    // Amount of years
+    const years = differenceInYears(endDate, dateStart);
+    // Amount of month
+    const month =
+      years > 0
+        ? differenceInMonths(endDate, addYears(dateStart, years))
+        : differenceInMonths(endDate, dateStart);
+    const ruYearsName = years > 3 ? 'л. ' : 'г. ';
+    return `(${years > 0 ? `${years}${isEnglish ? ' y. ' : ruYearsName}` : ''}${
+      month > 0 ? `${month}${isEnglish ? ' m.' : ' м.'}` : ''
+    })`;
+  };
+
   return (
     <StyledExperience>
       <h1>{isEnglish ? EXP.header.en : EXP.header.ru}</h1>
-      <h2>{`Общий опыт работы: ${currentExpYears} лет ${
-        currentExpMonth ? `${currentExpMonth} месяцев` : ''
-      }`}</h2>
+      <h3>{getDuration(startCareerDt)}</h3>
       <StyledCompanyName>
         <img alt="ITMH" src="/img/itmh.png" />
         <h2>{isEnglish ? EXP.itmh.en : EXP.itmh.ru}</h2>
       </StyledCompanyName>
+      {/* Certainly, I could parse a both of companies in a one map function. However, I'm lazy and also it`ll worsen reading of code */}
       {EXP.itmh.position
         .sort(sortPositions)
         .map((item: EmployeePositionProps) => {
           return (
-            <StyledPositionRow>
+            <StyledPositionRow key={item.en}>
               <h2>{isEnglish ? item.en : item.ru}</h2>
-              <h4>{`${format(item.dateStart, 'MMMM yyyy')} - ${
-                item.dateEnd ? format(item.dateEnd, 'MMMM yyyy') : 'cur.time'
-              }`}</h4>
+              <h4>
+                {getPeriodPosition(item.dateStart, item.dateEnd)}
+                <br />
+                {getDuration(item.dateStart, item.dateEnd)}
+              </h4>
             </StyledPositionRow>
           );
         })}
-      {/* <StyledPositionRow> */}
-      {/*  <h2>Frontend Developer</h2> */}
-      {/*  <h4>Январь 2020 - наст. время<br />(1 год)</h4> */}
-      {/* </StyledPositionRow> */}
-      {/* <StyledPositionRow> */}
-      {/*  <h2>Project Manager</h2> */}
-      {/*  <h4>Октябрь 2017 — Январь 2020<br />(2 года 4 месяца)</h4> */}
-      {/* </StyledPositionRow> */}
+      <StyledCompanyName>
+        <img alt="ACS" src="/img/acs.png" />
+        <h2>{isEnglish ? EXP.acs.en : EXP.acs.ru}</h2>
+      </StyledCompanyName>
+      {EXP.acs.position
+        .sort(sortPositions)
+        .map((item: EmployeePositionProps) => {
+          return (
+            <StyledPositionRow key={item.en}>
+              <h2>{isEnglish ? item.en : item.ru}</h2>
+              <h4>
+                {getPeriodPosition(item.dateStart, item.dateEnd)}
+                <br />
+                {getDuration(item.dateStart, item.dateEnd)}
+              </h4>
+            </StyledPositionRow>
+          );
+        })}
     </StyledExperience>
   );
 };

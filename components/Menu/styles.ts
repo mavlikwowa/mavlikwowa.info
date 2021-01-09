@@ -12,6 +12,7 @@ export const StyledMenu = styled.div`
     background: aliceblue;
     position: sticky;
     z-index: 999;
+    border-radius: 15px;
   `;
   }}
 `;

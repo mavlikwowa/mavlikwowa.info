@@ -9,7 +9,7 @@ export interface ExperienceProps {
   acs: CompanyProps;
 }
 
-interface CompanyProps extends MultiLanguagesInterface {
+export interface CompanyProps extends MultiLanguagesInterface {
   position: EmployeePositionProps[];
 }
 
