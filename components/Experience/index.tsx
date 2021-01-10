@@ -65,7 +65,7 @@ const Experience: React.FC = () => {
       years > 0
         ? differenceInMonths(endDate, addYears(dateStart, years))
         : differenceInMonths(endDate, dateStart);
-    const ruYearsName = years > 3 ? 'л. ' : 'г. ';
+    const ruYearsName = years > 3 ? ' л. ' : ' г. ';
     return `(${years > 0 ? `${years}${isEnglish ? ' y. ' : ruYearsName}` : ''}${
       month > 0 ? `${month}${isEnglish ? ' m.' : ' м.'}` : ''
     })`;
@@ -79,7 +79,7 @@ const Experience: React.FC = () => {
         <img alt="ITMH" src="/img/itmh.png" />
         <h2>{isEnglish ? EXP.itmh.en : EXP.itmh.ru}</h2>
       </StyledCompanyName>
-      {/* Certainly, I could parse a both of companies in a one map function. However, I'm lazy and also it`ll worsen reading of code */}
+      {/* Certainly, I could parse a both of companies in a one map function. However, I'm lazy and also it`ll worsen reading of code :) */}
       {EXP.itmh.position
         .sort(sortPositions)
         .map((item: EmployeePositionProps) => {

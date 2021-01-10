@@ -5,7 +5,7 @@ export const StyledMenu = styled.div`
   ${() => {
     return `
     display: fixed;
-    top: 0;
+    top: 5px;
     left: 0;
     width: 100%;
     height: 50px;

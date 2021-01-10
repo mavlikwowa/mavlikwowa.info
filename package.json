@@ -40,12 +40,14 @@
   "dependencies": {
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
+    "@types/uuid": "^8.3.0",
     "date-fns": "^2.16.1",
-    "mavlikwowa.ui": "^0.1.7",
+    "mavlikwowa.ui": "0.1.11",
     "next": "10.0.4",
     "next-seo": "^4.17.0",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@emotion/jest": "^11.1.0",

@@ -922,6 +922,11 @@
   resolved "https://registry.npmjs.org/@types/stack-utils/-/stack-utils-2.0.0.tgz#7036640b4e21cc2f259ae826ce843d277dad8cff"
   integrity sha512-RJJrrySY7A8havqpGObOB4W92QXKJo63/jFLLgpvOtsGUqbQZ9Sbgl35KMm1DjC6j7AvmmU2bIno+3IyEaemaw==
 
+"@types/uuid@^8.3.0":
+  version "8.3.0"
+  resolved "https://registry.npmjs.org/@types/uuid/-/uuid-8.3.0.tgz#215c231dff736d5ba92410e6d602050cce7e273f"
+  integrity sha512-eQ9qFW/fhfGJF8WKHGEHZEyVWfZxrT+6CLIJGBcZPfxUh/+BnEj+UCGYMlr9qZuX/2AltsvwrGqp0LhEW8D0zQ==
+
 "@types/yargs-parser@*":
   version "20.2.0"
   resolved "https://registry.npmjs.org/@types/yargs-parser/-/yargs-parser-20.2.0.tgz#dd3e6699ba3237f0348cd085e4698780204842f9"
@@ -5392,13 +5397,15 @@ markdown-it@^10.0.0:
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
 
-mavlikwowa.ui@^0.1.7:
-  version "0.1.7"
-  resolved "https://registry.npmjs.org/mavlikwowa.ui/-/mavlikwowa.ui-0.1.7.tgz#913f1ef6760535675b4e0a355a225034f5db9e02"
-  integrity sha512-cXMZNGsGK2SK6wWdNOPD0RfK5+WnquUnMLRv9R9mFdsc6FgQTe+wVo0UZBx10DmXBge7L6InXtz5SIOlGdNQaw==
+mavlikwowa.ui@0.1.11:
+  version "0.1.11"
+  resolved "https://registry.npmjs.org/mavlikwowa.ui/-/mavlikwowa.ui-0.1.11.tgz#16f81a55e49a4e47c43d8a7327bc851743239964"
+  integrity sha512-rTG6ax/tpJ4dgHD8BUitwQIBnl91AZ4Ksy5mC5mz+Uc791ILebpcR7VqbHzT+N2+okKh/fSSSJvnPjD8vjvhNw==
   dependencies:
     "@emotion/react" "^11.1.4"
     "@emotion/styled" "^11.0.0"
+    "@types/uuid" "^8.3.0"
+    uuid "^8.3.2"
 
 md5.js@^1.3.4:
   version "1.3.5"
@@ -8164,7 +8171,7 @@ uuid@^3.3.2:
   resolved "https://registry.npmjs.org/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
-uuid@^8.3.0:
+uuid@^8.3.0, uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==

@@ -4,6 +4,8 @@ import React from 'react';
 import Header from '../components/Header';
 import Menu from '../components/Menu';
 import Experience from '../components/Experience';
+import About from '../components/About';
+import Contacts from '../components/Contacts';
 /* Contexts */
 
 const App: React.FC = () => {
@@ -12,6 +14,8 @@ const App: React.FC = () => {
       <Menu />
       <Header />
       <Experience />
+      <About />
+      <Contacts />
     </>
   );
 };

@@ -1,5 +1,11 @@
 /* Interfaces */
-import { MultiLanguagesInterface, ExperienceProps } from './interfaces';
+import React from 'react';
+import {
+  MultiLanguagesInterface,
+  ExperienceProps,
+  AboutProps,
+  ContactsProps,
+} from './interfaces';
 
 // My professional skills
 export const SKILLS: string[] = [
@@ -80,4 +86,70 @@ export const EXP: ExperienceProps = {
       },
     ],
   },
+};
+
+export const ABOUT: AboutProps = {
+  ru: 'Обо мне',
+  en: 'About me',
+  SliderItem: [
+    {
+      backgroundUrl: '/img/footweight.png',
+      ruChild: (
+        <h3>
+          Рост - 192 см. Размер ноги - 47.
+          <br />
+          Но минусов от этого больше чем плюсов.
+        </h3>
+      ),
+      enChild: (
+        <h3>
+          Height: 6.3 feet. Foot size: 11.875 Inches.
+          <br />
+          However, it brings more limitations than benefits.
+        </h3>
+      ),
+    },
+    {
+      backgroundUrl: '/img/hobby.png',
+      color: 'ivory',
+      boxShadow: 'inset 0px 0px 250px 40px #4c3f37',
+      ruChild: (
+        <h3>
+          Люблю:<ol>Футбол</ol>
+          <ol>Играть на музыкальных инструментах</ol>
+          <ol>Путешествовать</ol>
+        </h3>
+      ),
+      enChild: (
+        <h3>
+          I`m keen on:<ol>Football</ol>
+          <ol>Playing on musical instruments</ol>
+          <ol>Travelling</ol>
+        </h3>
+      ),
+    },
+    {
+      backgroundUrl: '/img/dreams.png',
+      color: 'ivory',
+      ruChild: (
+        <div>
+          <h3>Учу английский</h3>
+          <h3>Мечтаю построить футбольное поле</h3>
+          <h3>Хочу поработать в иностранной компании</h3>
+        </div>
+      ),
+      enChild: (
+        <div>
+          <h3>Learn English</h3>
+          <h3>Dream to build a football field</h3>
+          <h3>Want to work in a foreign company</h3>
+        </div>
+      ),
+    },
+  ],
+};
+
+export const CONTACTS: ContactsProps = {
+  ru: 'Контакты',
+  en: 'Contacts',
 };

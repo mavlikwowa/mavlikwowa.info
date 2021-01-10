@@ -1,3 +1,6 @@
+/* Interfaces */
+import { StyledSliderItemProps } from '../components/About/SliderItem/interfaces';
+
 export interface MultiLanguagesInterface {
   ru: string;
   en: string;
@@ -17,3 +20,14 @@ export interface EmployeePositionProps extends MultiLanguagesInterface {
   dateStart: Date;
   dateEnd?: Date;
 }
+
+export interface AboutProps extends MultiLanguagesInterface {
+  SliderItem: SliderItemSettings[];
+}
+
+export interface SliderItemSettings extends StyledSliderItemProps {
+  ruChild: React.ReactNode;
+  enChild: React.ReactNode;
+}
+
+export type ContactsProps = MultiLanguagesInterface;
