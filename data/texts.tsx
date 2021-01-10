@@ -152,4 +152,36 @@ export const ABOUT: AboutProps = {
 export const CONTACTS: ContactsProps = {
   ru: 'Контакты',
   en: 'Contacts',
+  contactLink: [
+    {
+      href: 'https://t.me/mavlikwowa',
+      title: 'telegram',
+      alt: 'telegram',
+      src: '/img/telegram.png',
+    },
+    {
+      href: 'https://github.com/mavlikwowa',
+      title: 'github',
+      alt: 'github',
+      src: '/img/github.png',
+    },
+    {
+      href: 'https://ru.stackoverflow.com/users/423219/vladimir-malikov',
+      title: 'stackoverflow',
+      alt: 'stackoverflow',
+      src: '/img/stackoverflow.png',
+    },
+    {
+      href: 'https://career.habr.com/mavlikwowa',
+      title: 'habr',
+      alt: 'habr',
+      src: '/img/habr.png',
+    },
+    {
+      href: 'https://www.linkedin.com/in/vladimir-malikov-7159a6193/',
+      title: 'linkedin',
+      alt: 'linkedin',
+      src: '/img/linkedin.png',
+    },
+  ],
 };

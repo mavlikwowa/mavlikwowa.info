@@ -30,4 +30,13 @@ export interface SliderItemSettings extends StyledSliderItemProps {
   enChild: React.ReactNode;
 }
 
-export type ContactsProps = MultiLanguagesInterface;
+export interface ContactsProps extends MultiLanguagesInterface {
+  contactLink: ContactLinkProps[];
+}
+
+export interface ContactLinkProps {
+  href: string;
+  alt: string;
+  title: string;
+  src: string;
+}
