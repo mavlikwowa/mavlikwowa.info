@@ -9,10 +9,7 @@ export const StyledHeader = styled.div`
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    // background-image: url('/img/avatar.png');
-    // background-size: cover;
-    // min-height: 960px;
-    // color: white;
+   
     h1 {
       margin-bottom: 0;
     }
@@ -21,7 +18,7 @@ export const StyledHeader = styled.div`
     }
     img {
       width: 256px;
-      height: 256px;
+      height: 384px;
       margin: 0 10px 25px 0;
       @media (max-width: 940px) {
         margin: 0 0 25px 0;
