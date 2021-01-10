@@ -10,7 +10,7 @@ import { StyledAbout } from './styles';
 import SliderItem from './SliderItem';
 
 /* Data */
-import { ABOUT } from '../../data/texts';
+import { ABOUT, BLOCKIDS } from '../../data/texts';
 
 /* Contexts */
 import { LanguageContext } from '../Providers/LanguageProvider';
@@ -21,7 +21,7 @@ import { SliderItemSettings } from '../../data/interfaces';
 export const About: React.FC = () => {
   const { isEnglish } = useContext(LanguageContext);
   return (
-    <StyledAbout>
+    <StyledAbout id={BLOCKIDS.AboutId}>
       <h1>{isEnglish ? ABOUT.en : ABOUT.ru}</h1>
       <Slider
         data={ABOUT.SliderItem.map((item: SliderItemSettings) => {

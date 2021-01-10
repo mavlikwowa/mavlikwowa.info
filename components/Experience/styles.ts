@@ -9,7 +9,7 @@ export const StyledExperience = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    
+   
     h1 {
       margin-bottom: 0;
     }

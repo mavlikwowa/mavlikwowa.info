@@ -33,3 +33,21 @@ export const StyledMenuContainer = styled.div`
   `;
   }}
 `;
+
+export const StyledSidePage = styled.div`
+  ${() => {
+    return `
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    h1 {
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }  
+    }
+  `;
+  }}
+`;

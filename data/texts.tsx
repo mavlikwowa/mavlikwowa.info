@@ -5,6 +5,7 @@ import {
   ExperienceProps,
   AboutProps,
   ContactsProps,
+  MenuProps,
 } from './interfaces';
 
 // My professional skills
@@ -184,4 +185,25 @@ export const CONTACTS: ContactsProps = {
       src: '/img/linkedin.png',
     },
   ],
+};
+
+export const BLOCKIDS = {
+  ExpId: '#exp',
+  AboutId: '#about',
+  ContactsId: '#contacts',
+};
+
+export const MENU: MenuProps = {
+  exp: {
+    ru: 'Опыт',
+    en: 'Experience',
+  },
+  about: {
+    ru: 'Обо мне',
+    en: 'About me',
+  },
+  contacts: {
+    ru: 'Контакты',
+    en: 'Contacts',
+  },
 };

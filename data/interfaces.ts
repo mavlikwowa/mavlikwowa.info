@@ -40,3 +40,9 @@ export interface ContactLinkProps {
   title: string;
   src: string;
 }
+
+export interface MenuProps {
+  exp: MultiLanguagesInterface;
+  about: MultiLanguagesInterface;
+  contacts: MultiLanguagesInterface;
+}

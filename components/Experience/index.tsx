@@ -17,7 +17,7 @@ import { LanguageContext } from '../Providers/LanguageProvider';
 /* Interfaces */
 import { EmployeePositionProps, CompanyProps } from '../../data/interfaces';
 /* Data */
-import { EXP } from '../../data/texts';
+import { EXP, BLOCKIDS } from '../../data/texts';
 /* Utils */
 import { capitalizeFirstLetter } from '../../utils/utils';
 
@@ -72,7 +72,7 @@ const Experience: React.FC = () => {
   };
 
   return (
-    <StyledExperience>
+    <StyledExperience id={BLOCKIDS.ExpId}>
       <h1>{isEnglish ? EXP.header.en : EXP.header.ru}</h1>
       <h3>{getDuration(startCareerDt)}</h3>
       <StyledCompanyName>

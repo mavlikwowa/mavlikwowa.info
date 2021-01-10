@@ -5,7 +5,7 @@ import { v4 as uuid } from 'uuid';
 /* Styled Components */
 import { StyledContacts } from './styles';
 /* Data */
-import { CONTACTS } from '../../data/texts';
+import { CONTACTS, BLOCKIDS } from '../../data/texts';
 /* Contexts */
 import { LanguageContext } from '../Providers/LanguageProvider';
 /* Inteface */
@@ -14,7 +14,7 @@ import { ContactLinkProps } from '../../data/interfaces';
 const Contacts: React.FC = () => {
   const { isEnglish } = useContext(LanguageContext);
   return (
-    <StyledContacts>
+    <StyledContacts id={BLOCKIDS.ContactsId}>
       <h1>{isEnglish ? CONTACTS.en : CONTACTS.ru}</h1>
       <div>
         {CONTACTS.contactLink.map((item: ContactLinkProps) => {
