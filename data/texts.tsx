@@ -6,26 +6,33 @@ import {
   AboutProps,
   ContactsProps,
   MenuProps,
+  SkillProps,
 } from './interfaces';
 
 // My professional skills
-export const SKILLS: string[] = [
-  'React',
-  'Vue',
-  'TypeScript',
-  'JavaScript',
-  'Webpack',
-  'T-SQL',
-  'MySQL',
-  'NextJS',
-  'Stylus',
-  'CSS-in-JS',
+export const SKILLS: SkillProps[] = [
+  { img: '/img/react.svg', name: 'React' },
+  { img: '/img/vue.svg', name: 'Vue' },
+  { img: '/img/typescript.svg', name: 'TypeScript' },
+  { img: '/img/javascript.svg', name: 'JavaScript' },
+  { img: '/img/webpack.svg', name: 'Webpack' },
+  { img: '/img/tsql.svg', name: 'T-SQL' },
+  { img: '/img/mysql.svg', name: 'MySQL' },
+  { img: '/img/nextjs.svg', name: 'NextJS' },
+  { img: '/img/stylus.svg', name: 'Stylus' },
+  { img: '/img/cssinjs.svg', name: 'CSS-in-JS' },
 ];
 
 // The First|Second name
 export const FAMILYNAME: MultiLanguagesInterface = {
   ru: 'Владимир Маликов',
   en: 'Vladimir Malikov',
+};
+
+// The First|Second name
+export const HEADERSKILLS: MultiLanguagesInterface = {
+  ru: 'Мои компетенции:',
+  en: 'My skills:',
 };
 
 // Experience texts

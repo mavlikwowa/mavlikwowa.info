@@ -46,3 +46,8 @@ export interface MenuProps {
   about: MultiLanguagesInterface;
   contacts: MultiLanguagesInterface;
 }
+
+export interface SkillProps {
+  img: string;
+  name: string;
+}
