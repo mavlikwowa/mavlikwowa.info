@@ -213,4 +213,8 @@ export const MENU: MenuProps = {
     ru: 'Контакты',
     en: 'Contacts',
   },
+  email: {
+    ru: 'Моя почта',
+    en: 'My mail',
+  },
 };

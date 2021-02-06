@@ -229,6 +229,22 @@ const GlobalStyles: React.FC = () => {
           font-size: 18px;
           line-height: 23px;
         }
+        p {
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 20px;
+          color: #ffffff;
+        }
+        a {
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 30px;
+          color: #f32f4b;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       `}
     />
   );

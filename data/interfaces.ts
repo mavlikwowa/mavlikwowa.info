@@ -45,6 +45,7 @@ export interface MenuProps {
   exp: MultiLanguagesInterface;
   about: MultiLanguagesInterface;
   contacts: MultiLanguagesInterface;
+  email: MultiLanguagesInterface;
 }
 
 export interface SkillProps {

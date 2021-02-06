@@ -9,8 +9,8 @@ import isAfter from 'date-fns/isAfter';
 /* Styled Components */
 import {
   StyledExperience,
-  StyledCompanyName,
   StyledPositionRow,
+  StyledCompanyBlock,
 } from './styles';
 /* Contexts */
 import { LanguageContext } from '../Providers/LanguageProvider';
@@ -73,45 +73,50 @@ const Experience: React.FC = () => {
 
   return (
     <StyledExperience id={BLOCKIDS.ExpId}>
-      <h1>{isEnglish ? EXP.header.en : EXP.header.ru}</h1>
-      <h3>{getDuration(startCareerDt)}</h3>
-      <StyledCompanyName>
+      <h3>{isEnglish ? EXP.header.en : EXP.header.ru}</h3>
+      <h1>{getDuration(startCareerDt)}</h1>
+      {/* Certainly, I could parse a both of companies in a one map-function.
+      However, I didn't do it, because I'm lazy and also it`ll worsen reading of code :) */}
+      <StyledCompanyBlock>
         <img alt="ITMH" src="/img/itmh.png" />
-        <h2>{isEnglish ? EXP.itmh.en : EXP.itmh.ru}</h2>
-      </StyledCompanyName>
-      {/* Certainly, I could parse a both of companies in a one map function. However, I'm lazy and also it`ll worsen reading of code :) */}
-      {EXP.itmh.position
-        .sort(sortPositions)
-        .map((item: EmployeePositionProps) => {
-          return (
-            <StyledPositionRow key={item.en}>
-              <h2>{isEnglish ? item.en : item.ru}</h2>
-              <h4>
-                {getPeriodPosition(item.dateStart, item.dateEnd)}
-                <br />
-                {getDuration(item.dateStart, item.dateEnd)}
-              </h4>
-            </StyledPositionRow>
-          );
-        })}
-      <StyledCompanyName>
+        <div>
+          <img alt="ITMH" src="/img/itmh.png" />
+          <h3>{isEnglish ? EXP.itmh.en : EXP.itmh.ru}</h3>
+          {EXP.itmh.position
+            .sort(sortPositions)
+            .map((item: EmployeePositionProps) => {
+              return (
+                <StyledPositionRow key={item.en}>
+                  <h4>{isEnglish ? item.en : item.ru}</h4>
+                  <h4>
+                    {getPeriodPosition(item.dateStart, item.dateEnd)}&nbsp;
+                    {getDuration(item.dateStart, item.dateEnd)}
+                  </h4>
+                </StyledPositionRow>
+              );
+            })}
+        </div>
+      </StyledCompanyBlock>
+      <StyledCompanyBlock>
         <img alt="ACS" src="/img/acs.png" />
-        <h2>{isEnglish ? EXP.acs.en : EXP.acs.ru}</h2>
-      </StyledCompanyName>
-      {EXP.acs.position
-        .sort(sortPositions)
-        .map((item: EmployeePositionProps) => {
-          return (
-            <StyledPositionRow key={item.en}>
-              <h2>{isEnglish ? item.en : item.ru}</h2>
-              <h4>
-                {getPeriodPosition(item.dateStart, item.dateEnd)}
-                <br />
-                {getDuration(item.dateStart, item.dateEnd)}
-              </h4>
-            </StyledPositionRow>
-          );
-        })}
+        <div>
+          <img alt="ACS" src="/img/acs.png" />
+          <h3>{isEnglish ? EXP.acs.en : EXP.acs.ru}</h3>
+          {EXP.acs.position
+            .sort(sortPositions)
+            .map((item: EmployeePositionProps) => {
+              return (
+                <StyledPositionRow key={item.en}>
+                  <h4>{isEnglish ? item.en : item.ru}</h4>
+                  <h4>
+                    {getPeriodPosition(item.dateStart, item.dateEnd)}&nbsp;
+                    {getDuration(item.dateStart, item.dateEnd)}
+                  </h4>
+                </StyledPositionRow>
+              );
+            })}
+        </div>
+      </StyledCompanyBlock>
     </StyledExperience>
   );
 };

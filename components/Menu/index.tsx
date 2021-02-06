@@ -8,7 +8,13 @@ import {
   BurgerIcon,
   SidePage,
 } from 'mavlikwowa.ui';
-import { StyledMenu, StyledMenuContainer, StyledSidePage } from './styles';
+import Link from 'next/link';
+import {
+  StyledMenu,
+  StyledMenuContainer,
+  StyledSidePage,
+  StyledSwitcher,
+} from './styles';
 /* Components */
 /* Contexts */
 import { LanguageContext } from '../Providers/LanguageProvider';
@@ -22,7 +28,16 @@ const Menu: React.FC = () => {
   const [showSidePage, setShowSidePage] = useState<boolean>(false);
   const [showMenu, setShowMenu] = useState<boolean>(true);
   // An action after click
-  const clickOnSwitch = () => {
+  const clickOnSwitch = (
+    event: React.MouseEvent | React.FormEvent,
+    lang?: string
+  ) => {
+    if (
+      (lang === 'ru' && !isEnglish) ||
+      (lang === 'eng' && isEnglish) ||
+      !event
+    )
+      return;
     setIsEnglish(!isEnglish);
   };
   // Closes SidePage
@@ -62,28 +77,65 @@ const Menu: React.FC = () => {
       setShowMenu(true);
     }, 1000);
   };
+  // Returns a switcher of languages
+  const langSwitcher = (): JSX.Element => {
+    return (
+      <StyledSwitcher isEnglish={isEnglish}>
+        <p role="none" onClick={(e) => clickOnSwitch(e, 'ru')}>
+          Ru
+        </p>
+        <Switcher checked={isEnglish} onChange={(e) => clickOnSwitch(e)}>
+          {isEnglish ? <EnglishFlagIcon /> : <RussianFlagIcon />}
+        </Switcher>
+        <p role="none" onClick={(e) => clickOnSwitch(e, 'eng')}>
+          Eng
+        </p>
+      </StyledSwitcher>
+    );
+  };
+
   return (
     <>
       {showMenu && (
         <StyledMenu>
           <StyledMenuContainer>
-            <Switcher checked={isEnglish} onChange={clickOnSwitch}>
-              {isEnglish ? <EnglishFlagIcon /> : <RussianFlagIcon />}
-            </Switcher>
-            <div role="none" onClick={openSidePage}>
+            {langSwitcher()}
+            <span className="desktop__links">
+              <p role="none" onClick={scrollToExp}>
+                {isEnglish ? MENU.exp.en : MENU.exp.ru}
+              </p>
+              <p role="none" onClick={scrollToAbout}>
+                {isEnglish ? MENU.about.en : MENU.about.ru}
+              </p>
+              <p role="none" onClick={scrollToContacts}>
+                {isEnglish ? MENU.contacts.en : MENU.contacts.ru}
+              </p>
+            </span>
+            <Link href="mailto:mavlikwowa@gmail.com" passHref>
+              <a>mavlikwowa@gmail.com</a>
+            </Link>
+            <div className="mobile__burger" role="none" onClick={openSidePage}>
               <BurgerIcon />
             </div>
-            <SidePage show={showSidePage} onCloseClick={closeSidePage}>
+            <SidePage
+              header={langSwitcher()}
+              show={showSidePage}
+              onCloseClick={closeSidePage}
+            >
               <StyledSidePage>
-                <h1 role="none" onClick={scrollToExp}>
+                <p>{isEnglish ? MENU.email.en : MENU.email.ru}</p>
+                <Link href="mailto:mavlikwowa@gmail.com" passHref>
+                  <a>mavlikwowa@gmail.com</a>
+                </Link>
+                <h3 role="none" onClick={scrollToExp}>
                   {isEnglish ? MENU.exp.en : MENU.exp.ru}
-                </h1>
-                <h1 role="none" onClick={scrollToAbout}>
+                </h3>
+                <h3 role="none" onClick={scrollToAbout}>
                   {isEnglish ? MENU.about.en : MENU.about.ru}
-                </h1>
-                <h1 role="none" onClick={scrollToContacts}>
+                </h3>
+                <h3 role="none" onClick={scrollToContacts}>
                   {isEnglish ? MENU.contacts.en : MENU.contacts.ru}
-                </h1>
+                </h3>
               </StyledSidePage>
             </SidePage>
           </StyledMenuContainer>
