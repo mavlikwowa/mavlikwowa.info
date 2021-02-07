@@ -136,7 +136,6 @@ export const ABOUT: AboutProps = {
           <h1
             style={{
               marginRight: '50px',
-              fontWeight: '300',
               fontSize: '64px',
               lineHeight: '81px',
               color: 'white',
@@ -166,7 +165,6 @@ export const ABOUT: AboutProps = {
           <h1
             style={{
               marginRight: '50px',
-              fontWeight: '300',
               fontSize: '64px',
               lineHeight: '81px',
               color: 'white',

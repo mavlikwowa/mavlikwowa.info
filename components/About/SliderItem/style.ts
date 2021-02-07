@@ -18,6 +18,9 @@ export const StyledSliderItem = styled.div<StyledSliderItemProps>`
     align-items: center;
     justify-content: center;
     padding: 0 10% 0 10%;
+    h1 {
+      font-weight: 300;
+    }
     @media (max-width: 940px) {
       h3 {
         font-size: 18px;
