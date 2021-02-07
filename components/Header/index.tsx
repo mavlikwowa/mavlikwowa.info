@@ -1,37 +1,49 @@
 /* Libraries */
 import React, { useContext } from 'react';
-/* Styled Components */
+/* Interfaces */
 import { Tag } from 'mavlikwowa.ui';
-import { StyledHeader, StyledSkills } from './style';
+import { SkillProps } from '../../data/interfaces';
+/* Styled Components */
+import { StyledHeader, StyledSkills, StyledSkill } from './style';
 /* Components */
 /* Contexts */
 import { LanguageContext } from '../Providers/LanguageProvider';
 /* Data */
-import { SKILLS, FAMILYNAME } from '../../data/texts';
+import { SKILLS, FAMILYNAME, HEADERSKILLS } from '../../data/texts';
 
 const Header: React.FC = () => {
   const { isEnglish } = useContext(LanguageContext);
   return (
     <StyledHeader>
-      <h1>{isEnglish ? FAMILYNAME.en : FAMILYNAME.ru}</h1>
-      <h3>Frontend Developer</h3>
+      <img alt="avatar" src="/img/avatar.png" />
       <div>
-        <img alt="avatar" src="/img/avatar.png" />
+        <div>
+          <h3>{isEnglish ? FAMILYNAME.en : FAMILYNAME.ru}</h3>
+          <h1>Frontend Developer</h1>
+          <h4>{isEnglish ? HEADERSKILLS.en : HEADERSKILLS.ru}</h4>
+        </div>
         <StyledSkills>
-          {SKILLS.map((item: string, index: number) => {
+          {SKILLS.map((item: SkillProps, index: number) => {
             // Doesn't have similar items
             return (
-              <Tag
-                key={item}
-                background="#129900"
-                border="#ADD900"
-                color="#D0FFC9"
-                width="110px"
-                height="35px"
+              <StyledSkill
+                key={item.name}
                 style={{ animationDelay: `${index / 4}S` }}
               >
-                {item}
-              </Tag>
+                <img src={item.img} alt={item.name} />
+                <h4>{item.name}</h4>
+              </StyledSkill>
+              // <Tag
+              //   key={item.name}
+              //   background="#129900"
+              //   border="#ADD900"
+              //   color="#D0FFC9"
+              //   width="110px"
+              //   height="35px"
+              //   style={{ animationDelay: `${index / 4}S` }}
+              // >
+              //   {item}
+              // </Tag>
             );
           })}
         </StyledSkills>

@@ -1,18 +1,22 @@
 /* Libraries */
 import styled from '@emotion/styled';
+/* Interfaces */
+import { StyledSwitcherProps } from './interfaces';
 
 export const StyledMenu = styled.div`
   ${() => {
     return `
     display: fixed;
-    top: 5px;
+    top: 0;
     left: 0;
     width: 100%;
     height: 50px;
-    background: aliceblue;
+    background: #121826;
     position: sticky;
     z-index: 999;
-    border-radius: 15px;
+    @media (max-width: 940px) {
+      border-radius: 15px;
+    }
   `;
   }}
 `;
@@ -27,10 +31,70 @@ export const StyledMenuContainer = styled.div`
     width: 100%;
     padding: 0 10% 0 10%;
     
+    .desktop__links {
+      display: flex;
+      width: 300px;
+      align-items: center;
+      justify-content: space-between;
+      p {
+        cursor: pointer;
+        white-space: nowrap;
+        &:hover {
+          color: #F32F4B;
+          text-decoration: underline;
+        }
+      }
+      @media (max-width: 940px) {
+        display: none;
+      }
+    }
+    
+    .mobile__burger {
+      display: none;
+      @media (max-width: 940px) {
+        display: block;
+      }
+    }
+   
     svg {
       cursor: pointer;
+      fill: white;
+    }
+    
+    > div: last-of-type {
+      background: #121826;
+    }
+    
+    > a {
+      @media (max-width: 940px) {
+        display: none;
+      }
     }
   `;
+  }}
+`;
+
+export const StyledSwitcher = styled.span<StyledSwitcherProps>`
+  ${({ isEnglish }: StyledSwitcherProps) => {
+    return `
+      display: flex;
+      flex-direction: row;
+      width: auto;
+      justify-content: center;
+      align-items: center;
+      p {
+        margin: 0 9px 0 9px;
+        cursor: pointer;
+      }
+      p: first-of-type {
+        color:${isEnglish ? 'white' : '#F32F4B'};
+        cursor:${isEnglish ? 'pointer' : 'default'};
+      }
+      p: last-of-type {
+        color:${isEnglish ? '#F32F4B' : 'white'};
+        cursor:${isEnglish ? 'default' : 'pointer'};
+      }
+    `;
   }}
 `;
 
@@ -42,11 +106,19 @@ export const StyledSidePage = styled.div`
     align-items: center;
     justify-content: center;
     
-    h1 {
+    h3 {
       cursor: pointer;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 30px;
+      margin: 0 0 26px 0;
       &:hover {
         text-decoration: underline;
-      }  
+      } 
+    }
+    
+    a {
+      margin-bottom: 40px;
     }
   `;
   }}

@@ -39,10 +39,17 @@ export interface ContactLinkProps {
   alt: string;
   title: string;
   src: string;
+  name: string;
 }
 
 export interface MenuProps {
   exp: MultiLanguagesInterface;
   about: MultiLanguagesInterface;
   contacts: MultiLanguagesInterface;
+  email: MultiLanguagesInterface;
+}
+
+export interface SkillProps {
+  img: string;
+  name: string;
 }

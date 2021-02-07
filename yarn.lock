@@ -5405,10 +5405,10 @@ markdown-it@^10.0.0:
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
 
-mavlikwowa.ui@0.1.11:
-  version "0.1.11"
-  resolved "https://registry.npmjs.org/mavlikwowa.ui/-/mavlikwowa.ui-0.1.11.tgz#16f81a55e49a4e47c43d8a7327bc851743239964"
-  integrity sha512-rTG6ax/tpJ4dgHD8BUitwQIBnl91AZ4Ksy5mC5mz+Uc791ILebpcR7VqbHzT+N2+okKh/fSSSJvnPjD8vjvhNw==
+mavlikwowa.ui@^0.1.17:
+  version "0.1.17"
+  resolved "https://registry.npmjs.org/mavlikwowa.ui/-/mavlikwowa.ui-0.1.17.tgz#1a1206980bbc2674974f2d42e3a9e663eca2c92f"
+  integrity sha512-BzBddnOyzHBdFEBR1X10EA1GnDxbPzjPUXzx3rdSFG8otJTeXTCNTwS85YOj0ZL4nL4PwHdLuCWdBqCmxplUdw==
   dependencies:
     "@emotion/react" "^11.1.4"
     "@emotion/styled" "^11.0.0"
