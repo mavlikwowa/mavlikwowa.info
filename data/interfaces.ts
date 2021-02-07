@@ -39,6 +39,7 @@ export interface ContactLinkProps {
   alt: string;
   title: string;
   src: string;
+  name: string;
 }
 
 export interface MenuProps {

@@ -11,6 +11,7 @@ const SliderItem: React.FC<StyledSliderItemProps> = ({
   backgroundUrl,
   color,
   boxShadow,
+  isEnglish,
   children,
 }: StyledSliderItemProps) => {
   return (
@@ -18,6 +19,7 @@ const SliderItem: React.FC<StyledSliderItemProps> = ({
       color={color}
       backgroundUrl={backgroundUrl}
       boxShadow={boxShadow}
+      isEnglish={isEnglish}
     >
       {children}
     </StyledSliderItem>

@@ -37,15 +37,12 @@ export const StyledMenuContainer = styled.div`
       align-items: center;
       justify-content: space-between;
       p {
-        // margin-right: 100px;
         cursor: pointer;
         white-space: nowrap;
-      }
-      p:first-of-type {
-        // margin-left: 20px;
-      }
-      p:last-of-type {
-        // margin-right: 20px;
+        &:hover {
+          color: #F32F4B;
+          text-decoration: underline;
+        }
       }
       @media (max-width: 940px) {
         display: none;

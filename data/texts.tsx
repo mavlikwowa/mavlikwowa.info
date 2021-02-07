@@ -104,14 +104,18 @@ export const ABOUT: AboutProps = {
       backgroundUrl: '/img/footweight.png',
       ruChild: (
         <h3>
-          Рост - 192 см. Размер ноги - 47.
+          Рост - 192 см.
+          <br />
+          Размер ноги - 47.
           <br />
           Но минусов от этого больше чем плюсов.
         </h3>
       ),
       enChild: (
         <h3>
-          Height: 6.3 feet. Foot size: 11.875 Inches.
+          Height: 6.3 feet.
+          <br />
+          Foot size: 11.875 Inches.
           <br />
           However, it brings more limitations than benefits.
         </h3>
@@ -122,35 +126,89 @@ export const ABOUT: AboutProps = {
       color: 'ivory',
       boxShadow: 'inset 0px 0px 250px 40px #4c3f37',
       ruChild: (
-        <h3>
-          Люблю:<ol>Футбол</ol>
-          <ol>Играть на музыкальных инструментах</ol>
-          <ol>Путешествовать</ol>
-        </h3>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <h1
+            style={{
+              marginRight: '50px',
+              fontWeight: '300',
+              fontSize: '64px',
+              lineHeight: '81px',
+              color: 'white',
+            }}
+          >
+            Люблю
+          </h1>
+          <div>
+            <h3>
+              Футбол
+              <br />
+              Играть на музыкальных инструментах
+              <br />
+              Путешествовать
+            </h3>
+          </div>
+        </div>
       ),
       enChild: (
-        <h3>
-          I`m keen on:<ol>Football</ol>
-          <ol>Playing on musical instruments</ol>
-          <ol>Travelling</ol>
-        </h3>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <h1
+            style={{
+              marginRight: '50px',
+              fontWeight: '300',
+              fontSize: '64px',
+              lineHeight: '81px',
+              color: 'white',
+            }}
+          >
+            I`m keen on:
+          </h1>
+          <div>
+            <h3>
+              Football
+              <br />
+              Playing on musical instruments
+              <br />
+              Travelling
+            </h3>
+          </div>
+        </div>
       ),
     },
     {
       backgroundUrl: '/img/dreams.png',
       color: 'ivory',
       ruChild: (
-        <div>
-          <h3>Учу английский</h3>
-          <h3>Мечтаю построить футбольное поле</h3>
-          <h3>Хочу поработать в иностранной компании</h3>
+        <div style={{ textAlign: 'center' }}>
+          <h3>
+            Учу английский.
+            <br />
+            Мечтаю построить футбольное поле.
+            <br />
+            Хочу поработать в иностранной компании.
+          </h3>
         </div>
       ),
       enChild: (
-        <div>
-          <h3>Learn English</h3>
-          <h3>Dream to build a football field</h3>
-          <h3>Want to work in a foreign company</h3>
+        <div style={{ textAlign: 'center' }}>
+          <h3>
+            Learn English.
+            <br />
+            Dream to build a football field.
+            <br />
+            Want to work in a foreign company.
+          </h3>
         </div>
       ),
     },
@@ -166,30 +224,35 @@ export const CONTACTS: ContactsProps = {
       title: 'telegram',
       alt: 'telegram',
       src: '/img/telegram.png',
+      name: 'Telegram',
     },
     {
       href: 'https://github.com/mavlikwowa',
       title: 'github',
       alt: 'github',
       src: '/img/github.png',
+      name: 'GitHub',
     },
     {
       href: 'https://ru.stackoverflow.com/users/423219/vladimir-malikov',
       title: 'stackoverflow',
       alt: 'stackoverflow',
       src: '/img/stackoverflow.png',
+      name: 'Stack Overflow',
     },
     {
       href: 'https://career.habr.com/mavlikwowa',
       title: 'habr',
       alt: 'habr',
       src: '/img/habr.png',
+      name: 'Habr',
     },
     {
       href: 'https://www.linkedin.com/in/vladimir-malikov-7159a6193/',
       title: 'linkedin',
       alt: 'linkedin',
       src: '/img/linkedin.png',
+      name: 'LinkedIn',
     },
   ],
 };

@@ -20,13 +20,20 @@ export const StyledContacts = styled.div`
         margin: 15px;
         width: 90px;
         height: 90px;
-        padding: 10px;
         cursor: pointer;
-        &:hover {
-          border: 1px solid;
-        }
         &:active {
           border: none;
+        }
+      }
+      a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+          p {
+            color: #f32f4b;
+          }
         }
       }
     }
